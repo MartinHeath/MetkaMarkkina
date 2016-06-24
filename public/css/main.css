@@ -1,0 +1,65 @@
+html, body {
+    height: 100%;
+    font-size: 20px;
+}
+.dropdown-menu {
+  width: auto !important;
+  height: auto !important;
+}
+body {
+    margin: 0;
+    padding: 90px;
+    width: 100%;
+    display: table;
+    font-weight: 100;
+    font-family: 'Prompt', sans-serif;
+}
+
+.dropdown{
+  margin-right: 30px;
+  font-size: 18px;
+}
+.container {
+    text-align: center;
+    vertical-align: middle;
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+}
+
+.content {
+    display: inline-block;
+}
+
+.title {
+    font-size: 96px;
+}
+
+#addBut{
+  text-align:center;
+  margin:auto;
+}
+
+.form-horizontal{
+  font-size: 20px;
+}
+
+.img {
+  max-height: auto;
+  max-width: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.img-thumbnail {
+    display: inline;
+    max-width: 300px;
+    max-height: 300px;
+}
+.table{
+  font-size: 20px;
+  font-family: 'Prompt', sans-serif;
+}
+#itemList:hover{
+  cursor: pointer;
+}
