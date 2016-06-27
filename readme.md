@@ -38,6 +38,7 @@ Now simply navigate to http:\\localhost:8080\ to begin.
 * **Searchbar:** simple searchbar mechanic will autofill any existing items. Selecting an item and pressing "hae" will take you to the relevant page.
 * **Shopping basket:** not yet implemented
 * **DHTML list:** The item list has been implemented in jQuery and Ajax.
+* **File upload:** Files can be uploaded into the app. They are stored in the /public/images/ folder due to permission reasons.
 
 ### Version
 1.0
