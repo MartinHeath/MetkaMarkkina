@@ -14,6 +14,7 @@ class MarketItemsTable extends Migration
     {
         Schema::create('marketItem', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id');
             $table->string('header');
             $table->string('description');
             $table->string('email');

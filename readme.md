@@ -1,3 +1,48 @@
+# MetkaMarkkina
+An online marketplace application developed using the [Laravel][l1] Framework. The aplication was developed as an exercise for a job opening. The main coding language used is PHP.
+
+The app is mostly in Finnish.
+
+## Installation:
+
+Download source files from github (link somewhere above).
+
+Create the database (use the .env file in the root of the app as a guide). Please note the  *DB_Connectiton* is set to mysql as a default.
+
+The default name for the database is marketData, username: admin, pw: admin.
+
+After the database has been created, open up a command window/console in the root folder and create the schema with
+```sh
+php artisan migrate
+```
+This should create all necessary tables in your database.
+
+The project environment is not set up.
+
+
+### Run
+Navigate to the public folder(which contains the index.php file) and open up a server here. I´ve used port 8080.
+For example:
+
+```sh
+php -S localhost:8080
+```
+
+Now simply navigate to http:\\localhost:8080\ to begin.
+
+## Features:
+
+* **User account support (Create an account)**
+* **Create, read, delete and list operations**
+* **User authentication:** guests cannot delete anything, users can delete their own items or the items of guests (Will be changed)
+* **Searchbar:** simple searchbar mechanic will autofill any existing items. Selecting an item and pressing "hae" will take you to the relevant page.
+* **Shopping basket:** not yet implemented
+* **DHTML list:** The item list has been implemented in jQuery and Ajax.
+
+### Version
+1.0
+
+
 # Laravel PHP Framework
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
@@ -25,3 +70,11 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+
+[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
+
+
+   [l1]: https://laravel.com/
+   [Twitter Bootstrap]: <http://twitter.github.com/bootstrap/>
+   [jQuery]: <http://jquery.com>
+   [Dillinger]: http://dillinger.io/

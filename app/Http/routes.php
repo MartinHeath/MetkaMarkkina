@@ -12,18 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+  return view('welcome');
 });
 
+Route::delete('/item/{item}', 'ItemController@deleteItem');
 Route::get('/item', 'ItemController@showForm');
 Route::post('/item', 'ItemController@addItem');
 Route::get('/itemlist','ItemController@itemList');
-
-Route::get('/item/update', 'ItemController@updateForm');
-Route::post('/item/update','ItemController@updateItem');
 Route::get('/listdata', 'ItemController@getJsonItems');
 
 Route::get('/search/{item}', 'ItemController@getSearch');
 Route::get('/{item}','ItemController@showItem');
 
-Route::delete('/item/{item}', 'ItemController@deleteItem');
+
+// Authentication Routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@logout');
+
+// Registration Routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');

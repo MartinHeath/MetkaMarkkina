@@ -50,9 +50,13 @@ $(document).ready(function(){
       data: {_method:"delete"},
       success: function(result){
         $("#content").html(result);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        alert("Tapahtui virhe: " + textStatus +  ": " + errorThrown);
       }
     });
   });
+
   $("#searchBut").click(function(){
     var name= $(".search").val();
     console.log(name);
@@ -62,9 +66,6 @@ $(document).ready(function(){
       success: function(result){
         window.location.href = "/search/"+name;
       },
-      error: function(error){
-        console.log(error);
-      }
     });
   });
 

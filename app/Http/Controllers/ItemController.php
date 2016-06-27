@@ -12,6 +12,7 @@ use App\Repositories\ItemRepository;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Auth;
 
 class ItemController extends Controller{
     protected $itemRepo;
@@ -92,6 +93,12 @@ class ItemController extends Controller{
         }
         //setting values to model and saving to db
         $i = new MarketItem;
+        if(Auth::guest()){
+          $i ->user_id = 0;
+        }
+        else {
+          $i ->user_id = $req->user()->id;
+        }
         $i->header = $req->name;
         $i->description = $req->desc;
         $i->price = $req->price;
@@ -104,11 +111,14 @@ class ItemController extends Controller{
       }
     }
     //Item delete function
-    public function deleteItem(Request $request,$item){
-        $i= $this->itemRepo->getItemById($item);
-        //deleting image in storage
-        Storage::disk('public')->delete($i->image);
-        $this->itemRepo->delete($i);
-        return redirect('/itemlist');
+    public function deleteItem(Request $request, $item){
+      $i= $this->itemRepo->getItemById($item);
+
+      $this->authorize('destroy', $i);
+
+      //deleting image in storage
+      Storage::disk('public')->delete($i->image);
+      $this->itemRepo->delete($i);
+      return redirect('/itemlist');
     }
   }
