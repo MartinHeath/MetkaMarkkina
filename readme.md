@@ -17,7 +17,7 @@ php artisan migrate
 ```
 This should create all necessary tables in your database.
 
-The project environment is not set up.
+The project environment is now set up.
 
 
 ### Run
